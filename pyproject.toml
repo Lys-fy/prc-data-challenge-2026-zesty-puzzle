@@ -1,0 +1,56 @@
+[project]
+name = "prc-data-challenge-2026"
+version = "0.1.0"
+description = "Taxi-out time prediction for the EUROCONTROL PRC Data Challenge 2026"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=2.2",
+    "polars>=1.0",
+    "pyarrow>=16",
+    "duckdb>=1.0",
+    "numpy>=1.26",
+    "scikit-learn>=1.5",
+    "lightgbm>=4.3",
+    "catboost>=1.2",
+    "xgboost>=2.0",
+    "matplotlib>=3.8",
+    "minio>=7.2",
+    "requests>=2.31",
+    "tqdm>=4.66",
+    "shapely>=2.1.2",
+    "networkx>=3.6.1",
+    "pyproj>=3.7.2",
+    "tabulate>=0.10.0",
+    "scipy>=1.17.1",
+]
+
+[tool.uv]
+package = false
+
+[tool.black]
+# Formatting is behaviour-preserving (identical Python AST per file, checked when the tree was formatted).
+line-length = 120
+target-version = ["py312"]
+# Files read as source text by other scripts (sliced, string-patched or exec'd, e.g. STACKSRC, scripts/combine_nofloor.py,
+# scripts/kstk_assemble.py, kumo_gpu/collect/reagg_local.py) and the train2 trainers (kept byte-identical to the build): reformatting would move the text anchors those readers match.
+force-exclude = '''^/(scripts/train2\.py|scripts/train2_catcfg\.py|scripts/train2_clockfree\.py|scripts/train2_dark\.py|scripts/train2_linked\.py|scripts/train2_pseudo\.py|scripts/train2_queue\.py|scripts/train2_wideleaf\.py|kumo_gpu/cluster/km_adapters_feed\.py|scripts/audited_assemble\.py|scripts/chain_stack\.py|scripts/chainvar_assemble\.py|scripts/chainvar_stack\.py|scripts/dayset_novelty\.py|scripts/dayset_stack\.py|scripts/daystate_lib\.py|scripts/fallback_assemble\.py|scripts/fallback_stack\.py|scripts/final_combine\.py|scripts/gate_unsealed_folds\.py|scripts/kstk_stack\.py|scripts/kumo_km_member\.py|scripts/pru_assemble\.py|scripts/pru_build\.py|scripts/pru_daily_calib\.py|scripts/pru_stack\.py|scripts/screen_l2_extra\.py|scripts/sealed_score\.py|scripts/stage12_stack\.py|scripts/wideleaf_stack\.py)$'''
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+# pyflakes + pycodestyle errors. The ignored rules have fixes that change the AST of scripts whose outputs are pinned by md5
+# (import splitting, unused-import removal, f-string and comparison rewrites) or flag the one-line style of the excluded files.
+select = ["E4", "E7", "E9", "F"]
+ignore = ["E401", "E402", "E701", "E702", "E703", "E713", "E731", "E741", "F401", "F403", "F405", "F541", "F841"]
+
+[tool.ruff.lint.per-file-ignores]
+# names bound at run time by exec / module globals that pyflakes cannot see
+"scripts/newstand_map.py" = ["F821"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "baseline/tests"]
+
+[dependency-groups]
+dev = ["pytest", "ruff==0.17.0"]

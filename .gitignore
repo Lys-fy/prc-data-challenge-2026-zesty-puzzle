@@ -1,0 +1,43 @@
+# never publish: competition data, derived per-row tables, OOF, predictions, submissions, models, workspaces, secrets
+/data/
+/submissions/
+/scratchpad/
+phase2/work/
+phase2/heldout/
+secrets/
+/queue/
+*.parquet
+*.npz
+*.npy
+*.pkl
+*.cbm
+*.pt
+.venv/
+__pycache__/
+.env
+# added for the final release (2 Oct 2026): run logs, model weights cache, research log, mirrors, credentials
+/artifacts/
+experiments/
+logs/
+notes/
+mirror/
+reference/
+.credentials.json
+credentials.json
+secret.conf
+*.safetensors
+*.ckpt
+*.manifest.json
+!manifest/history/combine/*.manifest.json
+# never publish: Kumo payloads and run outputs, model caches, workspaces of the final run
+kumo_gpu/data/payload/
+kumo_gpu/data/resid/
+kumo_gpu/data/return/
+kumo_gpu/data/parity_b300/
+kumo_gpu/run/
+.venv-torch/
+.venv-kumo/
+*.tgz
+*.log
+.pytest_cache/
+.ruff_cache/

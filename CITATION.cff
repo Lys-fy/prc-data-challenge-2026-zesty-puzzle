@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite it as below."
+title: "zesty-puzzle: taxi-out time prediction for the PRC Data Challenge 2026"
+abstract: >-
+  Code of team zesty-puzzle for the EUROCONTROL Performance Review Commission Data Challenge 2026: prediction of the taxi-out time of
+  departures at ten European airports from flight-plan and movement data, open adsb.lol ADS-B ground clocks, EUROCONTROL open performance
+  data and weather, with stacked gradient-boosting chains, a tabular foundation model used in context and an airport-day set transformer.
+authors:
+  - family-names: "Melzer"
+    given-names: "Luis"
+    affiliation: "Team zesty-puzzle"
+type: software
+license: GPL-3.0-only
+version: "final"
+date-released: "2026-10-14"
+keywords:
+  - taxi-out time
+  - air traffic management
+  - ADS-B
+  - gradient boosting
+  - tabular foundation model
+  - PRC Data Challenge 2026
