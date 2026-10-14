@@ -1,0 +1,6 @@
+ab87ba639475942eeb38ba042c90ae07  schedule_copy/final_dryrun.parquet
+a0245491dd1262daddf98abfca1423a2  S2_rulebag.parquet
+f7784e3e62a2b2d9199eee65ad0fd6a4  S3_kcat8.parquet
+d95ad32d5a629b3ff7015924d3bcefa4  S4_schedule_copy.parquet
+1a155e9fc6e43cff09ca3b9f46b7cede  zesty-puzzle_final.parquet
+9cd6296dabbf5190e2e79765a897c33b  public_janjul.parquet

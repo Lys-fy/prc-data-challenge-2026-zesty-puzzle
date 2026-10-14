@@ -1,0 +1,6 @@
+373674bd6cde06f477891412b88369bf  base_line.parquet
+bc0fa06831e8660bf3a3d09bc165c100  bag_line.parquet
+137042cf2700eb984888535a5d68b7c6  bag_classes.parquet
+2e23a351ec49123b131a11e4915e07d2  kcat8_line.parquet
+e435443735aba545bef0499eabacf7c8  kcatlg_line.parquet
+c9a079efaee3ae064582cd06307ad199  features_final.parquet
