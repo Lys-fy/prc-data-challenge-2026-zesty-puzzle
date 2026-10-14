@@ -1,0 +1,726 @@
+{
+ "description": "Out-of-fold RMSE (s) of the chain line with KRS on matched 2025 departures, per airport and month; each month is scored by models that did not see it. n = departures per cell. Aggregates only.",
+ "overall_rmse_s": 166.6,
+ "cells": [
+  {
+   "airport": "EDDF",
+   "month": 1,
+   "n": 15332,
+   "rmse_s": 116.6
+  },
+  {
+   "airport": "EDDF",
+   "month": 2,
+   "n": 15025,
+   "rmse_s": 81.4
+  },
+  {
+   "airport": "EDDF",
+   "month": 3,
+   "n": 17552,
+   "rmse_s": 76.2
+  },
+  {
+   "airport": "EDDF",
+   "month": 4,
+   "n": 19511,
+   "rmse_s": 81.3
+  },
+  {
+   "airport": "EDDF",
+   "month": 5,
+   "n": 20973,
+   "rmse_s": 103.3
+  },
+  {
+   "airport": "EDDF",
+   "month": 6,
+   "n": 20417,
+   "rmse_s": 124.0
+  },
+  {
+   "airport": "EDDF",
+   "month": 7,
+   "n": 20899,
+   "rmse_s": 103.3
+  },
+  {
+   "airport": "EDDF",
+   "month": 8,
+   "n": 21275,
+   "rmse_s": 90.3
+  },
+  {
+   "airport": "EDDF",
+   "month": 9,
+   "n": 20831,
+   "rmse_s": 74.6
+  },
+  {
+   "airport": "EDDF",
+   "month": 10,
+   "n": 21112,
+   "rmse_s": 83.7
+  },
+  {
+   "airport": "EDDF",
+   "month": 11,
+   "n": 18030,
+   "rmse_s": 73.6
+  },
+  {
+   "airport": "EDDF",
+   "month": 12,
+   "n": 17228,
+   "rmse_s": 75.0
+  },
+  {
+   "airport": "EDDM",
+   "month": 1,
+   "n": 11201,
+   "rmse_s": 82.9
+  },
+  {
+   "airport": "EDDM",
+   "month": 2,
+   "n": 10354,
+   "rmse_s": 60.8
+  },
+  {
+   "airport": "EDDM",
+   "month": 3,
+   "n": 12482,
+   "rmse_s": 55.2
+  },
+  {
+   "airport": "EDDM",
+   "month": 4,
+   "n": 14301,
+   "rmse_s": 61.4
+  },
+  {
+   "airport": "EDDM",
+   "month": 5,
+   "n": 15759,
+   "rmse_s": 73.2
+  },
+  {
+   "airport": "EDDM",
+   "month": 6,
+   "n": 15502,
+   "rmse_s": 117.9
+  },
+  {
+   "airport": "EDDM",
+   "month": 7,
+   "n": 15653,
+   "rmse_s": 121.3
+  },
+  {
+   "airport": "EDDM",
+   "month": 8,
+   "n": 15426,
+   "rmse_s": 79.4
+  },
+  {
+   "airport": "EDDM",
+   "month": 9,
+   "n": 15821,
+   "rmse_s": 95.3
+  },
+  {
+   "airport": "EDDM",
+   "month": 10,
+   "n": 15393,
+   "rmse_s": 67.0
+  },
+  {
+   "airport": "EDDM",
+   "month": 11,
+   "n": 12528,
+   "rmse_s": 54.8
+  },
+  {
+   "airport": "EDDM",
+   "month": 12,
+   "n": 11905,
+   "rmse_s": 71.6
+  },
+  {
+   "airport": "EGLL",
+   "month": 1,
+   "n": 19292,
+   "rmse_s": 176.2
+  },
+  {
+   "airport": "EGLL",
+   "month": 2,
+   "n": 17918,
+   "rmse_s": 146.3
+  },
+  {
+   "airport": "EGLL",
+   "month": 3,
+   "n": 19160,
+   "rmse_s": 173.9
+  },
+  {
+   "airport": "EGLL",
+   "month": 4,
+   "n": 20193,
+   "rmse_s": 168.4
+  },
+  {
+   "airport": "EGLL",
+   "month": 5,
+   "n": 20723,
+   "rmse_s": 182.2
+  },
+  {
+   "airport": "EGLL",
+   "month": 6,
+   "n": 19936,
+   "rmse_s": 209.1
+  },
+  {
+   "airport": "EGLL",
+   "month": 7,
+   "n": 20452,
+   "rmse_s": 217.6
+  },
+  {
+   "airport": "EGLL",
+   "month": 8,
+   "n": 20716,
+   "rmse_s": 182.8
+  },
+  {
+   "airport": "EGLL",
+   "month": 9,
+   "n": 19934,
+   "rmse_s": 192.9
+  },
+  {
+   "airport": "EGLL",
+   "month": 10,
+   "n": 20566,
+   "rmse_s": 176.0
+  },
+  {
+   "airport": "EGLL",
+   "month": 11,
+   "n": 19369,
+   "rmse_s": 147.8
+  },
+  {
+   "airport": "EGLL",
+   "month": 12,
+   "n": 19873,
+   "rmse_s": 166.8
+  },
+  {
+   "airport": "EHAM",
+   "month": 1,
+   "n": 18167,
+   "rmse_s": 118.1
+  },
+  {
+   "airport": "EHAM",
+   "month": 2,
+   "n": 17600,
+   "rmse_s": 73.9
+  },
+  {
+   "airport": "EHAM",
+   "month": 3,
+   "n": 19962,
+   "rmse_s": 80.6
+  },
+  {
+   "airport": "EHAM",
+   "month": 4,
+   "n": 20699,
+   "rmse_s": 134.1
+  },
+  {
+   "airport": "EHAM",
+   "month": 5,
+   "n": 21889,
+   "rmse_s": 87.1
+  },
+  {
+   "airport": "EHAM",
+   "month": 6,
+   "n": 20842,
+   "rmse_s": 109.8
+  },
+  {
+   "airport": "EHAM",
+   "month": 7,
+   "n": 21974,
+   "rmse_s": 94.9
+  },
+  {
+   "airport": "EHAM",
+   "month": 8,
+   "n": 22255,
+   "rmse_s": 74.2
+  },
+  {
+   "airport": "EHAM",
+   "month": 9,
+   "n": 20929,
+   "rmse_s": 80.3
+  },
+  {
+   "airport": "EHAM",
+   "month": 10,
+   "n": 21405,
+   "rmse_s": 80.3
+  },
+  {
+   "airport": "EHAM",
+   "month": 11,
+   "n": 19002,
+   "rmse_s": 71.4
+  },
+  {
+   "airport": "EHAM",
+   "month": 12,
+   "n": 19143,
+   "rmse_s": 83.5
+  },
+  {
+   "airport": "LEBL",
+   "month": 1,
+   "n": 12168,
+   "rmse_s": 91.1
+  },
+  {
+   "airport": "LEBL",
+   "month": 2,
+   "n": 12124,
+   "rmse_s": 78.8
+  },
+  {
+   "airport": "LEBL",
+   "month": 3,
+   "n": 14080,
+   "rmse_s": 90.1
+  },
+  {
+   "airport": "LEBL",
+   "month": 4,
+   "n": 15288,
+   "rmse_s": 97.4
+  },
+  {
+   "airport": "LEBL",
+   "month": 5,
+   "n": 16375,
+   "rmse_s": 116.0
+  },
+  {
+   "airport": "LEBL",
+   "month": 6,
+   "n": 16103,
+   "rmse_s": 141.0
+  },
+  {
+   "airport": "LEBL",
+   "month": 7,
+   "n": 16324,
+   "rmse_s": 218.8
+  },
+  {
+   "airport": "LEBL",
+   "month": 8,
+   "n": 16371,
+   "rmse_s": 201.5
+  },
+  {
+   "airport": "LEBL",
+   "month": 9,
+   "n": 15899,
+   "rmse_s": 175.6
+  },
+  {
+   "airport": "LEBL",
+   "month": 10,
+   "n": 16106,
+   "rmse_s": 126.1
+  },
+  {
+   "airport": "LEBL",
+   "month": 11,
+   "n": 13265,
+   "rmse_s": 102.1
+  },
+  {
+   "airport": "LEBL",
+   "month": 12,
+   "n": 13746,
+   "rmse_s": 119.2
+  },
+  {
+   "airport": "LEMD",
+   "month": 1,
+   "n": 16478,
+   "rmse_s": 148.4
+  },
+  {
+   "airport": "LEMD",
+   "month": 2,
+   "n": 15373,
+   "rmse_s": 139.0
+  },
+  {
+   "airport": "LEMD",
+   "month": 3,
+   "n": 17511,
+   "rmse_s": 128.9
+  },
+  {
+   "airport": "LEMD",
+   "month": 4,
+   "n": 17293,
+   "rmse_s": 107.7
+  },
+  {
+   "airport": "LEMD",
+   "month": 5,
+   "n": 18116,
+   "rmse_s": 119.6
+  },
+  {
+   "airport": "LEMD",
+   "month": 6,
+   "n": 17889,
+   "rmse_s": 134.6
+  },
+  {
+   "airport": "LEMD",
+   "month": 7,
+   "n": 18541,
+   "rmse_s": 154.3
+  },
+  {
+   "airport": "LEMD",
+   "month": 8,
+   "n": 18416,
+   "rmse_s": 154.8
+  },
+  {
+   "airport": "LEMD",
+   "month": 9,
+   "n": 17579,
+   "rmse_s": 124.6
+  },
+  {
+   "airport": "LEMD",
+   "month": 10,
+   "n": 18808,
+   "rmse_s": 129.6
+  },
+  {
+   "airport": "LEMD",
+   "month": 11,
+   "n": 17372,
+   "rmse_s": 111.2
+  },
+  {
+   "airport": "LEMD",
+   "month": 12,
+   "n": 17927,
+   "rmse_s": 103.9
+  },
+  {
+   "airport": "LFPG",
+   "month": 1,
+   "n": 17684,
+   "rmse_s": 235.2
+  },
+  {
+   "airport": "LFPG",
+   "month": 2,
+   "n": 16683,
+   "rmse_s": 183.3
+  },
+  {
+   "airport": "LFPG",
+   "month": 3,
+   "n": 19235,
+   "rmse_s": 180.2
+  },
+  {
+   "airport": "LFPG",
+   "month": 4,
+   "n": 19851,
+   "rmse_s": 181.9
+  },
+  {
+   "airport": "LFPG",
+   "month": 5,
+   "n": 20643,
+   "rmse_s": 199.4
+  },
+  {
+   "airport": "LFPG",
+   "month": 6,
+   "n": 20435,
+   "rmse_s": 212.9
+  },
+  {
+   "airport": "LFPG",
+   "month": 7,
+   "n": 21049,
+   "rmse_s": 215.8
+  },
+  {
+   "airport": "LFPG",
+   "month": 8,
+   "n": 21679,
+   "rmse_s": 215.2
+  },
+  {
+   "airport": "LFPG",
+   "month": 9,
+   "n": 20294,
+   "rmse_s": 205.4
+  },
+  {
+   "airport": "LFPG",
+   "month": 10,
+   "n": 20493,
+   "rmse_s": 195.0
+  },
+  {
+   "airport": "LFPG",
+   "month": 11,
+   "n": 18276,
+   "rmse_s": 214.8
+  },
+  {
+   "airport": "LFPG",
+   "month": 12,
+   "n": 19465,
+   "rmse_s": 204.4
+  },
+  {
+   "airport": "LIRF",
+   "month": 1,
+   "n": 11257,
+   "rmse_s": 264.6
+  },
+  {
+   "airport": "LIRF",
+   "month": 2,
+   "n": 10645,
+   "rmse_s": 273.7
+  },
+  {
+   "airport": "LIRF",
+   "month": 3,
+   "n": 12485,
+   "rmse_s": 258.4
+  },
+  {
+   "airport": "LIRF",
+   "month": 4,
+   "n": 13959,
+   "rmse_s": 285.8
+  },
+  {
+   "airport": "LIRF",
+   "month": 5,
+   "n": 14442,
+   "rmse_s": 280.3
+  },
+  {
+   "airport": "LIRF",
+   "month": 6,
+   "n": 14511,
+   "rmse_s": 363.2
+  },
+  {
+   "airport": "LIRF",
+   "month": 7,
+   "n": 14874,
+   "rmse_s": 392.9
+  },
+  {
+   "airport": "LIRF",
+   "month": 8,
+   "n": 15262,
+   "rmse_s": 334.8
+  },
+  {
+   "airport": "LIRF",
+   "month": 9,
+   "n": 14499,
+   "rmse_s": 316.8
+  },
+  {
+   "airport": "LIRF",
+   "month": 10,
+   "n": 14027,
+   "rmse_s": 327.3
+  },
+  {
+   "airport": "LIRF",
+   "month": 11,
+   "n": 11276,
+   "rmse_s": 260.5
+  },
+  {
+   "airport": "LIRF",
+   "month": 12,
+   "n": 11980,
+   "rmse_s": 276.7
+  },
+  {
+   "airport": "LSZH",
+   "month": 1,
+   "n": 9556,
+   "rmse_s": 98.2
+  },
+  {
+   "airport": "LSZH",
+   "month": 2,
+   "n": 8936,
+   "rmse_s": 57.0
+  },
+  {
+   "airport": "LSZH",
+   "month": 3,
+   "n": 10297,
+   "rmse_s": 55.8
+  },
+  {
+   "airport": "LSZH",
+   "month": 4,
+   "n": 11036,
+   "rmse_s": 55.2
+  },
+  {
+   "airport": "LSZH",
+   "month": 5,
+   "n": 11813,
+   "rmse_s": 69.6
+  },
+  {
+   "airport": "LSZH",
+   "month": 6,
+   "n": 11812,
+   "rmse_s": 84.2
+  },
+  {
+   "airport": "LSZH",
+   "month": 7,
+   "n": 12266,
+   "rmse_s": 80.3
+  },
+  {
+   "airport": "LSZH",
+   "month": 8,
+   "n": 12335,
+   "rmse_s": 70.1
+  },
+  {
+   "airport": "LSZH",
+   "month": 9,
+   "n": 11961,
+   "rmse_s": 56.8
+  },
+  {
+   "airport": "LSZH",
+   "month": 10,
+   "n": 12139,
+   "rmse_s": 75.2
+  },
+  {
+   "airport": "LSZH",
+   "month": 11,
+   "n": 9981,
+   "rmse_s": 69.2
+  },
+  {
+   "airport": "LSZH",
+   "month": 12,
+   "n": 10484,
+   "rmse_s": 61.3
+  },
+  {
+   "airport": "LTFM",
+   "month": 1,
+   "n": 21139,
+   "rmse_s": 193.9
+  },
+  {
+   "airport": "LTFM",
+   "month": 2,
+   "n": 17965,
+   "rmse_s": 320.9
+  },
+  {
+   "airport": "LTFM",
+   "month": 3,
+   "n": 20604,
+   "rmse_s": 188.7
+  },
+  {
+   "airport": "LTFM",
+   "month": 4,
+   "n": 22074,
+   "rmse_s": 195.9
+  },
+  {
+   "airport": "LTFM",
+   "month": 5,
+   "n": 22866,
+   "rmse_s": 196.1
+  },
+  {
+   "airport": "LTFM",
+   "month": 6,
+   "n": 23196,
+   "rmse_s": 188.3
+  },
+  {
+   "airport": "LTFM",
+   "month": 7,
+   "n": 24747,
+   "rmse_s": 229.6
+  },
+  {
+   "airport": "LTFM",
+   "month": 8,
+   "n": 25124,
+   "rmse_s": 196.3
+  },
+  {
+   "airport": "LTFM",
+   "month": 9,
+   "n": 23745,
+   "rmse_s": 187.1
+  },
+  {
+   "airport": "LTFM",
+   "month": 10,
+   "n": 23715,
+   "rmse_s": 202.0
+  },
+  {
+   "airport": "LTFM",
+   "month": 11,
+   "n": 21884,
+   "rmse_s": 183.7
+  },
+  {
+   "airport": "LTFM",
+   "month": 12,
+   "n": 22283,
+   "rmse_s": 186.1
+  }
+ ]
+}

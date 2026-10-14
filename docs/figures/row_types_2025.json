@@ -1,0 +1,40 @@
+{
+ "description": "2025 departures by row type: share of rows, share of the squared error and RMSE of the out-of-fold predictions. Matched rows: the chain line with KRS (month-pair folds). Unmatched and exposed rows: the unmatched-row path before the in-context steps (leave-one-month-out). Aggregates only.",
+ "rows": [
+  {
+   "row_type": "matched, ADS-B clock",
+   "n": 1142270,
+   "share_rows": 0.54912,
+   "share_sq_error": 0.171,
+   "rmse_s": 123.6
+  },
+  {
+   "row_type": "matched, no clock",
+   "n": 920353,
+   "share_rows": 0.44244,
+   "share_sq_error": 0.3903,
+   "rmse_s": 208.0
+  },
+  {
+   "row_type": "unmatched",
+   "n": 16347,
+   "share_rows": 0.00786,
+   "share_sq_error": 0.1344,
+   "rmse_s": 915.8
+  },
+  {
+   "row_type": "unmatched LIRF",
+   "n": 1127,
+   "share_rows": 0.00054,
+   "share_sq_error": 0.159,
+   "rmse_s": 3793.7
+  },
+  {
+   "row_type": "exposed",
+   "n": 95,
+   "share_rows": 5e-05,
+   "share_sq_error": 0.1452,
+   "rmse_s": 12488.5
+  }
+ ]
+}
