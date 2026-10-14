@@ -1,0 +1,429 @@
+{
+ "about": "The 2025 constants of the final line: every fitted or hand-set number, its provenance and where the code holds it. This file documents the values; the scripts keep their own copies (the code that built the submitted file is unchanged), and tools/check_constants.py checks that every code literal listed here is present in its file. Fitted files are written by scripts/constants_2025.sh (make constants) to the paths under fitted_files, which scripts/run_final.sh checks before a run; the ones under scratchpad/ are derived from competition data and are not published. No value was set from a leaderboard score.",
+ "constants": [
+  {
+   "name": "pool_weights",
+   "value": {
+    "dTK": 0.3212,
+    "Kq": 0.3065,
+    "NNA3": 0.3723
+   },
+   "unit": "weight",
+   "kind": "fitted on 2025",
+   "provenance": "global simplex fit on the 6-fold vectors of the three chains, matched 2025 rows (scripts/pool_weights_fit.py, make constants step pool); unrounded fit in phase2/params/pool_weights.json; the code uses the 4-decimal values (the 5-slot pool_mix call writes the NNA3 weight as 0.3722)",
+   "code": [
+    {
+     "file": "phase2/run_pipeline.sh",
+     "literal": "W=0.3212,0.3065,0.3723"
+    },
+    {
+     "file": "phase2/run_pipeline.sh",
+     "literal": "W=0.0,0.3212,0.3065,0.0,0.3722"
+    },
+    {
+     "file": "phase2/steps/p2_v107.sh",
+     "literal": "--w 0.3212,0.3065,0.3723"
+    }
+   ],
+   "file": "phase2/params/pool_weights.json"
+  },
+  {
+   "name": "postrule_arms",
+   "value": "per airport, see file",
+   "unit": "arm",
+   "kind": "fitted on 2025",
+   "provenance": "standfloor and offblock_pull: one arm (or none) per airport chosen from fixed grids on all 12 months of 2025 fold vectors (phase2/steps/p2_postrules.py fit, make constants step postrules); shifts rounded to 1 s",
+   "code": [
+    {
+     "file": "phase2/periods/final.env",
+     "literal": "POSTRULES_PARAMS=params/postrules_fixed.json"
+    }
+   ],
+   "file": "phase2/params/postrules_fixed.json"
+  },
+  {
+   "name": "postrule_grids",
+   "value": {
+    "standfloor_window_s": [
+     600,
+     900
+    ],
+    "standfloor_base_s": [
+     0,
+     300
+    ],
+    "standfloor_step": [
+     0.5,
+     1.0
+    ],
+    "offblock_pull_threshold_s": [
+     5400,
+     7200
+    ],
+    "offblock_pull_k": [
+     0.25,
+     0.5,
+     1.0
+    ],
+    "offblock_pull_shift_shrink": "n/(n+50)"
+   },
+   "unit": "grid",
+   "kind": "set by hand before scoring",
+   "provenance": "candidate arms of the post-rule fit",
+   "code": [
+    {
+     "file": "phase2/steps/p2_postrules.py",
+     "literal": "GRID = [(W, b, k) for W in (600, 900) for b in (0, 300) for k in (0.5, 1.0)]"
+    },
+    {
+     "file": "phase2/steps/p2_postrules.py",
+     "literal": "ARMS = [(\"px\", t, k) for t in (5400, 7200) for k in (0.25, 0.5, 1.0)] + [(\"sh\", t, 0) for t in (5400, 7200)]"
+    }
+   ]
+  },
+  {
+   "name": "tw1_shift",
+   "value": 1264,
+   "unit": "s",
+   "kind": "fitted on 2025",
+   "provenance": "TW1' LFPG twin rule: n/(n+5) * mean(y - pred) over the 2025 class rows, rounded (scripts/tw1_rule_build.py, make constants step tw1 -> tw1p_shift.json)",
+   "code": [
+    {
+     "file": "phase2/steps/p2_v107.sh",
+     "literal": "TW1S=${TW1S:-1264}"
+    }
+   ]
+  },
+  {
+   "name": "tw1_pair_window",
+   "value": 300,
+   "unit": "s",
+   "kind": "set by hand before scoring",
+   "provenance": "two departure records of one callsign at LFPG with |dMVT| <= 300 s form a pair",
+   "code": [
+    {
+     "file": "scripts/tw1_rule_build.py",
+     "literal": "(pl.col(\"dprev\").abs() <= 300) | (pl.col(\"dnext\").abs() <= 300)"
+    }
+   ]
+  },
+  {
+   "name": "tw1_shrink",
+   "value": 5,
+   "unit": "rows",
+   "kind": "set by hand before scoring",
+   "provenance": "shrinkage n/(n+5) of the class mean",
+   "code": [
+    {
+     "file": "scripts/tw1_rule_build.py",
+     "literal": "n_all / (n_all + 5.0)"
+    }
+   ]
+  },
+  {
+   "name": "krs_beta",
+   "value": {
+    "low_spread": 0.452,
+    "mid_spread": 0.1726,
+    "high_spread": 0.0674
+   },
+   "unit": "fraction of (K250 - line)",
+   "kind": "fitted on 2025",
+   "provenance": "per tercile of the K250 instance spread, fitted on the 2025 fold rows of the line (scripts/krs_fold_line.sh, make constants step krs)",
+   "file": "scratchpad/xchain2/v106K_K2_KRS_prod_coef.json"
+  },
+  {
+   "name": "krsnl_shrink",
+   "value": 0.5,
+   "unit": "factor",
+   "kind": "set by hand before scoring",
+   "provenance": "KRS-NL: line + 0.5 * g",
+   "code": [
+    {
+     "file": "scripts/krs_nonlinear.py",
+     "literal": "out[h] = out[h] + 0.5 * _g("
+    }
+   ]
+  },
+  {
+   "name": "krsnl_residual_clip",
+   "value": 1800,
+   "unit": "s",
+   "kind": "set by hand before scoring",
+   "provenance": "clip of the KRS-line residual the LightGBM is fitted to",
+   "code": [
+    {
+     "file": "scripts/krs_nonlinear.py",
+     "literal": "np.clip(y - L, -1800, 1800)"
+    }
+   ]
+  },
+  {
+   "name": "krsnl_lightgbm",
+   "value": {
+    "num_leaves": 63,
+    "min_data_in_leaf": 2000,
+    "rounds": 300,
+    "learning_rate": 0.05
+   },
+   "unit": "setting",
+   "kind": "set by hand before scoring",
+   "provenance": "KRS-NL residual model settings; the fitted model is a 2025 fit (make constants step krsnl)",
+   "code": [
+    {
+     "file": "scripts/krs_nonlinear.py",
+     "literal": "min_data_in_leaf=2000,"
+    }
+   ],
+   "file": "scratchpad/xkrsnl/prod/gbm_A.txt"
+  },
+  {
+   "name": "meta_stacker_clip",
+   "value": 150,
+   "unit": "s",
+   "kind": "set by hand before scoring",
+   "provenance": "correction of the chain meta stacker clipped to +-150 s",
+   "code": [
+    {
+     "file": "scripts/chain_stack.py",
+     "literal": "CLIP = 150.0"
+    }
+   ]
+  },
+  {
+   "name": "clock_stage_clip",
+   "value": 300,
+   "unit": "s",
+   "kind": "set by hand before scoring",
+   "provenance": "Huber clock stage (Hu6) correction clipped to +-300 s",
+   "code": [
+    {
+     "file": "scripts/chain_clock.py",
+     "literal": "np.clip(np.nan_to_num(G.mean(0)), -300, 300)"
+    }
+   ]
+  },
+  {
+   "name": "callsign_link_step",
+   "value": {
+    "k": 1.0,
+    "clip_s": 1200
+   },
+   "unit": "factor / s",
+   "kind": "set by hand before scoring",
+   "provenance": "unmatched rows linked by callsign: + 1.0 * clip(g, +-1200)",
+   "code": [
+    {
+     "file": "scripts/unm_link_lever.py",
+     "literal": "\"V3\": (1.0, 1200.0)"
+    }
+   ]
+  },
+  {
+   "name": "kumo_F1_F3",
+   "value": {
+    "F1": {
+     "k": 1.0,
+     "clip_s": 1200
+    },
+    "F3": {
+     "k": 0.5,
+     "clip_s": 600
+    }
+   },
+   "unit": "factor / s",
+   "kind": "set by hand before scoring",
+   "provenance": "in-context residual on linked (F1) and unlinked (F3) unmatched rows",
+   "code": [
+    {
+     "file": "scripts/kumo_icl_unmatched.py",
+     "literal": "((\"F1\", 1.0, 1200.0), (\"F3\", 0.5, 600.0))"
+    }
+   ]
+  },
+  {
+   "name": "kumo_F4",
+   "value": {
+    "k": 0.5,
+    "clip_s": 1200
+   },
+   "unit": "factor / s",
+   "kind": "set by hand before scoring",
+   "provenance": "in-context residual on unmatched LIRF rows",
+   "code": [
+    {
+     "file": "scripts/kumo_icl_lirf.py",
+     "literal": "finish(inc, g26, LIRF, 0.5, 1200.0)"
+    }
+   ]
+  },
+  {
+   "name": "rule_bag_blend",
+   "value": {
+    "lightgbm": 0.5,
+    "catboost": 0.5
+   },
+   "unit": "weight",
+   "kind": "set by hand before scoring",
+   "provenance": "seed-bag blend of the rule-priced rows (24 LightGBM + 16 CatBoost seeds)",
+   "code": [
+    {
+     "file": "scripts/rulebag_blend.py",
+     "literal": "0.5 * pl.col(\"TAXITIME_SEC_mvt\") + 0.5 * pl.col(\"TAXITIME_SEC_mvt_c\")"
+    }
+   ]
+  },
+  {
+   "name": "pxsafe_ord_bounds",
+   "value": {
+    "crossers": 0.072,
+    "non_crossers": 0.259
+   },
+   "unit": "share",
+   "kind": "measured on 2025",
+   "provenance": "95 % exact one-sided upper bounds of the ORD share among 2025 exposed LIRF rows (0 of 40 crossers, 0 of 10 non-crossers; scripts/exposed_ord_bounds.py, make constants step exposed)",
+   "code": [
+    {
+     "file": "phase2/steps/p2_exposed_scenarios.py",
+     "literal": "UB_CROSS, UB_NONCROSS = 0.072, 0.259"
+    },
+    {
+     "file": "scripts/exposed_ord_bounds.py",
+     "literal": "SHIPPED = {\"cross\": 0.072, \"noncross\": 0.259}"
+    }
+   ]
+  },
+  {
+   "name": "pxsafe_margin",
+   "value": 2,
+   "unit": "factor",
+   "kind": "set by hand before scoring",
+   "provenance": "a row moves only if its break-even ORD probability is at least twice its class bound",
+   "code": [
+    {
+     "file": "phase2/steps/p2_exposed_scenarios.py",
+     "literal": "(be >= 2 * ub)"
+    }
+   ]
+  },
+  {
+   "name": "e1s_clock_cap",
+   "value": 1822,
+   "unit": "s",
+   "kind": "measured on 2025",
+   "provenance": "largest at-stand clock among the 21 linked 2025 exposed non-LIRF rows (scripts/e1s_clock_cap.py, make constants step exposed)",
+   "code": [
+    {
+     "file": "phase2/steps/p2_e1s.py",
+     "literal": "MAXCLK = float(os.environ.get(\"MAXCLK\", \"1822\"))"
+    },
+    {
+     "file": "scripts/e1s_clock_cap.py",
+     "literal": "SHIPPED = 1822.0"
+    }
+   ]
+  },
+  {
+   "name": "tail_guard_threshold",
+   "value": 2400,
+   "unit": "s",
+   "kind": "chosen on 2025 from a fixed grid",
+   "provenance": "KCATLg uses the raw-target member where its prediction is above 2,400 s; one global value from the grid {1,800, 2,400, 3,600 s, KCAT8 q99}, chosen on the 2025 folds",
+   "code": [
+    {
+     "file": "scripts/kumo_kcat_logtarget_tailguard.py",
+     "literal": "T = 2400.0"
+    }
+   ]
+  },
+  {
+   "name": "schedule_copy_join_edge",
+   "value": 3600,
+   "unit": "s",
+   "kind": "measured on 2025",
+   "provenance": "the organisers' flight-plan join edge |BLOCK - LOBT| <= 3,600 s as measured on 2025",
+   "code": [
+    {
+     "file": "scripts/rule_schedule_copy_lirf_relink.py",
+     "literal": "ordc = np.abs(aobt3_rec - lobt_rec) > 3600"
+    }
+   ]
+  },
+  {
+   "name": "scheduled_stamp_window",
+   "value": 28800,
+   "unit": "s",
+   "kind": "set by hand before scoring",
+   "provenance": "exposed rows: unmatched and MVT - SCHED > 8 h",
+   "code": [
+    {
+     "file": "scripts/rule_schedule_copy_lirf_relink.py",
+     "literal": "(pl.col(\"ms\") <= 28800)"
+    }
+   ]
+  },
+  {
+   "name": "lobt_bound",
+   "value": 3606,
+   "unit": "s",
+   "kind": "measured on 2025",
+   "provenance": "|y - (MVT - LOBT)| <= 3,606 s holds for every 2025 row with LOBT",
+   "code": [
+    {
+     "file": "scripts/staged_delta_apply.py",
+     "literal": "(np.abs(g - l) > 3606.5)"
+    }
+   ]
+  },
+  {
+   "name": "floor",
+   "value": 60,
+   "unit": "s",
+   "kind": "set by hand before scoring",
+   "provenance": "prediction floor",
+   "code": [
+    {
+     "file": "scripts/staged_delta_apply.py",
+     "literal": "np.maximum(np.rint(g), 60)"
+    }
+   ]
+  }
+ ],
+ "fitted_files": [
+  {
+   "name": "pool_weights",
+   "file": "phase2/params/pool_weights.json",
+   "written_by": "scripts/constants_2025.sh pool (writes scratchpad/constants/pool_weights.json for comparison)"
+  },
+  {
+   "name": "postrule_arms",
+   "file": "phase2/params/postrules_fixed.json",
+   "written_by": "scripts/constants_2025.sh postrules (writes scratchpad/constants/postrules_refit.json for comparison)"
+  },
+  {
+   "name": "tw1_shift",
+   "file": "scratchpad/xquick/tw1p_shift.json",
+   "written_by": "scripts/constants_2025.sh tw1"
+  },
+  {
+   "name": "krs_beta",
+   "file": "scratchpad/xchain2/v106K_K2_KRS_prod_coef.json",
+   "written_by": "scripts/constants_2025.sh krs"
+  },
+  {
+   "name": "krsnl_coef",
+   "file": "scratchpad/xkrsnl/prod/coef.json",
+   "written_by": "scripts/constants_2025.sh krsnl"
+  },
+  {
+   "name": "krsnl_model",
+   "file": "scratchpad/xkrsnl/prod/gbm_A.txt",
+   "written_by": "scripts/constants_2025.sh krsnl"
+  },
+  {
+   "name": "unmatched_context_2025",
+   "file": "scratchpad/xhr/unm2025b.parquet",
+   "written_by": "scripts/constants_2025.sh exposed (2025 rows only; competition data, not published)"
+  }
+ ]
+}

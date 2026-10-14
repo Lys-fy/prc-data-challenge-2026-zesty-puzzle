@@ -1,0 +1,137 @@
+{
+ "xsx": {
+  "EDDF": {
+   "arm": [
+    600,
+    300,
+    1.0
+   ]
+  },
+  "EDDM": {
+   "arm": null
+  },
+  "EGLL": {
+   "arm": [
+    900,
+    300,
+    1.0
+   ]
+  },
+  "EHAM": {
+   "arm": null
+  },
+  "LEBL": {
+   "arm": null
+  },
+  "LEMD": {
+   "arm": null
+  },
+  "LFPG": {
+   "arm": [
+    900,
+    300,
+    1.0
+   ]
+  },
+  "LIRF": {
+   "arm": [
+    600,
+    0,
+    0.5
+   ]
+  },
+  "LSZH": {
+   "arm": null
+  },
+  "LTFM": {
+   "arm": [
+    900,
+    300,
+    1.0
+   ]
+  }
+ },
+ "xpk": {
+  "EDDF": {
+   "arm": [
+    "sh",
+    5400,
+    0
+   ],
+   "shift": -47.0
+  },
+  "EDDM": {
+   "arm": [
+    "px",
+    7200,
+    0.25
+   ],
+   "shift": 0.0
+  },
+  "EGLL": {
+   "arm": [
+    "px",
+    7200,
+    0.5
+   ],
+   "shift": 0.0
+  },
+  "EHAM": {
+   "arm": [
+    "sh",
+    7200,
+    0
+   ],
+   "shift": 35.0
+  },
+  "LEBL": {
+   "arm": [
+    "px",
+    7200,
+    0.25
+   ],
+   "shift": 0.0
+  },
+  "LEMD": {
+   "arm": [
+    "px",
+    7200,
+    0.5
+   ],
+   "shift": 0.0
+  },
+  "LFPG": {
+   "arm": [
+    "px",
+    7200,
+    0.5
+   ],
+   "shift": 0.0
+  },
+  "LIRF": {
+   "arm": [
+    "px",
+    7200,
+    1.0
+   ],
+   "shift": 0.0
+  },
+  "LSZH": {
+   "arm": [
+    "px",
+    7200,
+    0.5
+   ],
+   "shift": 0.0
+  },
+  "LTFM": {
+   "arm": [
+    "px",
+    7200,
+    0.25
+   ],
+   "shift": 0.0
+  }
+ },
+ "source": "per-airport arms fitted on the 2025 folds by phase2/steps/p2_postrules.py fit (docs/REPRODUCE.md A3); shifts rounded to 1 s"
+}
