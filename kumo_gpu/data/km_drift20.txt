@@ -1,0 +1,22 @@
+# KUMO_ENGINE variant (e): the 20 most 2025->2026 drifted REAL columns of the 412 (DRIFT_COLS drift_cols.csv; col cls KS absSMD maxcell)
+# 21 COV cols of the 72 drift columns are in the 412; picked 20 (COV first by KS, then the most drifted MOVEMENT cols)
+adsb_n_ground	COV	0.324	0.74	EGLL-7
+adsb3_path	COV	0.224	0.50	EGLL-7
+adsb3_lat0	COV	0.219	0.29	LSZH-7
+adsb3_d_first_stand	COV	0.202	0.45	EGLL-7
+adsb_span	COV	0.201	0.41	EGLL-7
+adsb3_span	COV	0.201	0.41	EGLL-7
+adsb3_ppm	COV	0.201	0.29	EGLL-7
+adsb2_d_first	COV	0.199	0.42	EGLL-7
+adsb3_lon0	COV	0.180	0.27	EGLL-7
+adsb_lb	COV	0.164	0.30	EGLL-7
+adsb_tko_err	COV	0.159	0.38	LEMD-7
+adsb2_n_at	COV	0.155	0.23	EGLL-7
+adsb3_d_tko0	COV	0.154	0.26	LEMD-7
+adsb_lb_aobt	COV	0.146	0.27	EGLL-7
+adsb3_gs0	COV	0.141	0.26	EGLL-7
+adsb2_seen	COV	0.130	0.32	EGLL-7
+adsb_first_gs	COV	0.129	0.24	EGLL-7
+adsb3_v0	COV	0.129	0.24	EGLL-7
+adsb_run0_len	COV	0.059	0.09	LSZH-7
+adsb_stat	COV	0.052	0.13	EGLL-7

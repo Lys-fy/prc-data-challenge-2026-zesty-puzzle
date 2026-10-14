@@ -1,0 +1,14 @@
+# GPU_SCALE_CHECK S-B PROOF RUNG. Same views as KME8c100 (K20 = the S1 output);
+# only CAP changes. Folds janjul,months28 (FOLDS= on the line overrides the call). Decision arm = KSBWPc100 (whole pool). ~2.5 H100-h in total.
+# name        spec                                                                                                   est_h100_min/fold  role
+KSB60c100     SIZE=medium CAP=60000 NCOL=100 COLMODE=imp CORE=50 NINST=8 EIN=1 CTXMODE=uniform FOLDS=janjul,months28    10    K60: in-envelope maximum
+KSB120c100    SIZE=medium CAP=120000 NCOL=100 COLMODE=imp CORE=50 NINST=8 EIN=1 CTXMODE=uniform FOLDS=janjul,months28   16    K120: 2x beyond (member-level curve only)
+KSBWPc100     SIZE=medium CAP=1000000 NCOL=100 COLMODE=imp CORE=50 NINST=8 EIN=1 CTXMODE=uniform FOLDS=janjul,months28  25    K250: WHOLE POOL, the decision arm
+KLWPc100      SIZE=large CAP=1000000 NCOL=100 COLMODE=imp CORE=50 NINST=8 EIN=1 CTXMODE=uniform QMAX=2048   40    large whole-pool 8 views (P9 F1, FIRST_PASS_PROFILE)
+KSBWPc100s2   SIZE=medium CAP=1000000 NCOL=100 COLMODE=imp CORE=50 NINST=8 EIN=1 CTXMODE=uniform SEED=1  25    P18 backlog: whole-pool second seed set (bag-up for production)
+KSBWPc100s3   SIZE=medium CAP=1000000 NCOL=100 COLMODE=imp CORE=50 NINST=8 EIN=1 CTXMODE=uniform SEED=2  25    P18 bag-up seed set 3 (R-A: ship NINST>=32)
+KSBWPc100s4   SIZE=medium CAP=1000000 NCOL=100 COLMODE=imp CORE=50 NINST=8 EIN=1 CTXMODE=uniform SEED=3  25    P18 bag-up seed set 4 (R-A: ship NINST>=32)
+KSBWPc100k80  SIZE=medium CAP=1000000 NCOL=100 COLMODE=imp CORE=80 NINST=8 EIN=1 CTXMODE=uniform  25    P20: whole pool, importance core 80 (RERUN_PATCH: importance worth 15-25 s, views ~0)
+KDWPc100      SIZE=medium CAP=1000000 NCOL=100 COLMODE=imp CORE=50 NINST=8 EIN=1 CTXMODE=uniform DARK_CLK=1 DARK_Q=1  16    P23 DARK_TWIN_PROFILE: K250 clock-free dark twin (clock cols removed, dark-row query; km_adapters_dark.py)
+KARWPc100     SIZE=medium CAP=1000000 NCOL=100 COLMODE=imp CORE=50 NINST=8 EIN=1 CTXMODE=uniform KARR=1  60    P26 KUMO_ARRIVALS: K250 + labelled ARRIVAL context rows (+is_arr col; km_adapters_xkarr.py, payload/karr)
+KCAWPc100     SIZE=medium CAP=1000000 NCOL=100 COLMODE=imp CORE=50 NINST=8 EIN=1 CTXMODE=uniform KCOLA=1  25    P26 KUMO_ARRIVALS: K250 with PER-AIRPORT importance views (data/km_importance_412_<fold>_<APT>.tsv)

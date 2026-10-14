@@ -1,0 +1,8 @@
+# KUMO_CLUSTER_SETUP: staged payload (build machine jobs 021638db5 + 021641224, 2 Oct 2026) -- exact bytes + md5 in data/payload/MANIFEST_staged.tsv (24 files)
+payload_path	rows	content	bytes
+member/km_<APT>.parquet x10	2,429,888 (2025: 2,085,047 in 6 folds; 2026: 344,841)	meta__{MVT_ID_mvt,y,m,is_rank,ADEP_mvt,fb_pru,mvt_aobt3,adsb_linked}, _row, day, 412 Float32 features	781,929,971
+t2x/t2x_<chain>_<fold>.npz x8	2 x 1,373,364	apt, y, v41, X (41 cols float32), cols	295,774,500
+ref/parity_XKT_KM_janjul_LSZH.npy	22,346	[id, taxi] GPU workstation output	357,664
+vendor/sdm_ee6acd4_site.tgz	-	structured-data-models ee6acd4 (pure Python)	204,159
+vendor/hf/... medium + large regressor.pt, LICENSE, refs/v1.0.0	-	Kumo-Tabular v1.0.0 (bd7fa122)	1,113,056,643
+TOTAL			2,191,324,823 (2.04 GiB)

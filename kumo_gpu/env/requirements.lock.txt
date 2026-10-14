@@ -1,0 +1,27 @@
+# KUMO_CLUSTER_SETUP pinned environment = the kumo env, Python 3.12.
+# torch comes from the PyTorch index matching the GPU (setup_env.sh picks it):
+#   cu128  (default)  A100 sm_80, H100/H200 sm_90, B200 sm_100, (B300 sm_103 runs sm_100 cubins; cu129/cu130 preferred there)  driver >= 570 ideal, >= 525 via CUDA minor-version compatibility
+#   cu126  (fallback) V100 sm_70 (Volta is not in the cu128 wheels), or drivers 525-569 if cu128 misbehaves
+# The nvidia-* runtime libraries are pulled by torch itself (cu128 set on the build machine: cublas 12.8.4.1, cudnn 9.19.0.56, nccl 2.28.9, nvjitlink 12.8.93).
+torch==2.11.0
+triton==3.6.0
+numpy==2.5.3
+polars==1.44.2
+pyarrow==25.0.1
+huggingface_hub==1.32.0
+safetensors==0.8.0
+hf_xet==1.6.0
+typing_extensions==4.16.0
+packaging==26.3
+pyyaml==6.0.3
+tqdm==4.70.1
+filelock==4.0.5
+fsspec==2026.9.0
+jinja2==3.1.6
+markupsafe==3.0.3
+networkx==3.7
+sympy==1.14.0
+mpmath==1.3.0
+# structured-data-models: installed separately at the pinned commit (setup_env.sh):
+#   git+https://github.com/NVIDIA/structured-data-models.git@ee6acd402176b0efa42527babd63f15672d63418   (= 0.1.0rc2.dev177+gee6acd402, Apache-2.0)
+#   offline fallback: payload/vendor/sdm_ee6acd4_site.tgz (pure Python, unpacked into site-packages)

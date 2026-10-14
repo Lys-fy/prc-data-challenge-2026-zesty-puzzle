@@ -1,0 +1,6 @@
+# KSTK_ASSEMBLE: Kumo as the CHAIN-STACKER augment via cluster/km_adapters_kstk.py (km_engine.py unchanged; KSTK_CHAIN unset = the native engine bit for bit).
+# Frames: data/payload/stk6/stk_<chain>_<6 chain folds|prod>.npz (scripts/kstk_run.sh dump on the CPU host: the chain stacker's own 43 meta inputs).
+# Context = the chain GBM meta's training folds (pairs protocol: janjul never context). Same engine spec as KSTK_FEED KSTK8 (the 4-fold PASS). Rules
+# name         spec                                                                                                              est_h100_min/unit  role
+KSTK6Kq        SIZE=medium CAP=1000000 NCOL=1000 COLMODE=all NINST=8 EIN=1 CTXMODE=uniform KSTK_CHAIN=Kq KSTK_CLIP=1800   14    PRODUCTION gK for the KB chain kstk_inputkq (6 folds + prod)
+KSTK6NNA3      SIZE=medium CAP=1000000 NCOL=1000 COLMODE=all NINST=8 EIN=1 CTXMODE=uniform KSTK_CHAIN=NNA3 KSTK_CLIP=1800   14    PRODUCTION gK for the KB chain KSTK_STACKER_NNA3 (6 folds + prod)

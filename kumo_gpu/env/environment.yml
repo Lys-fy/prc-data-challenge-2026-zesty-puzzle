@@ -1,0 +1,15 @@
+# KUMO_CLUSTER_SETUP conda/mamba alternative to setup_env.sh (same pins). Use when the cluster offers conda but not uv.
+#   mamba env create -f environment.yml -p $ENVDIR ; then run setup_env.sh with ENV_PY=$ENVDIR/bin/python SKIP_VENV=1 (installs sdm + weights + checks)
+name: kumo-xclu
+channels: [conda-forge]
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu128    # V100: cu126
+      - torch==2.11.0
+      - numpy==2.5.3
+      - polars==1.44.2
+      - pyarrow==25.0.1
+      - huggingface_hub==1.32.0
+      - safetensors==0.8.0

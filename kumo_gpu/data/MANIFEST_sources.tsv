@@ -1,0 +1,27 @@
+# KUMO_CLUSTER_SETUP: build machine source files (read-only, 2 Oct 2026). These are NOT shipped as-is: stage/stage_data.py reads them and writes the
+# minimal payload (columns/rows subset, see data/MANIFEST_payload_plan.tsv). md5 = state on the build machine at 2 Oct 2026 ~16:30 CEST.
+path_on_build_host	bytes	md5	used_for	shipped_as
+data/features_v9.parquet	1265576465	216667fb44a8afb8f60549aea3862911	arm M, FT: 321 of 461 columns (META + FEATS_L numeric)	payload/member/km_<APT>.parquet (column subset)
+data/external/durp_features.parquet	24047208	4e1f482e26d7975ec13051bd889591f0	arm M: 8 cols	(merged into km_<APT>)
+data/external/dreg_features.parquet	47148842	89364d74c40460191acff8e09cde4d85	arm M: 24 cols	(merged)
+data/external/adsb_features.parquet	47717769	e202f1c4e2c768b2e5a1aabce05be64b	arm M: 14 cols	(merged)
+data/external/adsb2_features.parquet	25953018	ec8d32069af38646d53f670fd2531307	arm M: 8 cols	(merged)
+data/external/adsb3_features.parquet	69695523	0401151d44b27867232ca96d4915f3e1	arm M: 13 cols	(merged)
+data/external/xba_features.parquet	32875099	1d576068e01f9a678b67affa12bc1019	arm M: 5 cols	(merged)
+data/external/xe_queue_features.parquet	76912621	98f5c9004d3c1e068f7c94417c433b1f	arm M: 26 cols	(merged)
+scratchpad/xkt/t2x/Kq_months39.npz	78630734	e4792fb2d91d5bdd004014dc3c951081	§7 (kumo_t2x_screen2 dump, job 301923325)	payload/t2x/t2x_Kq_months39.npz (apt,y,v41,X only)
+scratchpad/xkt/t2x/Kq_months28.npz	75580550	4eee75f74407d2e1dea544911aefa07e	§7	payload/t2x/t2x_Kq_months28.npz
+scratchpad/xkt/t2x/Kq_months410.npz	81619586	275fd6f3441c2e4790c9410e7a1dff2f	§7	payload/t2x/t2x_Kq_months410.npz
+scratchpad/xkt/t2x/Kq_janjul.npz	77306738	852087c50dbd197b842f32b9a157de3e	§7	payload/t2x/t2x_Kq_janjul.npz
+scratchpad/xkt/t2x/NNA3_months39.npz	78630734	045064f6b8987f780108a0d47dfaf031	§7	payload/t2x/t2x_NNA3_months39.npz
+scratchpad/xkt/t2x/NNA3_months28.npz	75580550	e4828f5f2d7aafc5123272419f8e5df8	§7	payload/t2x/t2x_NNA3_months28.npz
+scratchpad/xkt/t2x/NNA3_months410.npz	81619586	b1489ac30c565ed8d10a07af5c2fc908	§7	payload/t2x/t2x_NNA3_months410.npz
+scratchpad/xkt/t2x/NNA3_janjul.npz	77306738	f8b483cd2add95d5ed65c547bd758cde	§7	payload/t2x/t2x_NNA3_janjul.npz
+data/oof/kumo_member_screen_km_janjul.npy	5510832	6da93d805e6165b903819ebd489ec8ec	parity reference (GPU workstation, job 281638357)	payload/ref/parity_XKT_KM_janjul_LSZH.npy (22,346 rows)
+data/oof/kumo_member_screen_km_months28.npy	5358752	486783b03e724d8739f8f4fcbddecdf2	stays on the build machine (collect keeps it unless --replace)	—
+artifacts/xkumo/hf/.../bd7fa122.../medium/regressor.pt	250144651	sha256 daa6a17420b5aed231007e5d2f9c712abe093b4f94b3e1189b178947a95fb725	Kumo-Tabular weights (public, HF)	payload/vendor/hf/... (or downloaded on the box)
+<kumo env>/site-packages/sdm (+dist-info)	~2.8 MB	(commit ee6acd402176b0efa42527babd63f15672d63418)	structured-data-models (public, Apache-2.0)	payload/vendor/sdm_ee6acd4_site.tgz (or git on the box)
+scripts/kumo_km_member.py	6625	975b9f6b76a62f14f7bf2125e6112d41	reference logic (copied to cluster/orig/)	code
+scripts/kumo_t2x_screen2.py	7685	3a6cbeeb36440c4dc82404d23db4585e	reference logic (copied to cluster/orig/)	code
+scripts/kumo_icl_finetune.py	11889	696979d4c24406d872a9fe558e4082a2	optional FT (copied to cluster/orig/, exec'd with the data block swapped)	code
+scripts/train2.py	—	eef4e1c4c1152ba65f329020103c38d3	feature resolution at staging (build machine only, not shipped)	—

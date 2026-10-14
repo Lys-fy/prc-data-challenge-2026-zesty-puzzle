@@ -1,0 +1,6 @@
+# nvidia/Kumo-Tabular, tag v1.0.0 -> commit bd7fa122b516c7355583873ffcf38f5e79403ebd
+daa6a17420b5aed231007e5d2f9c712abe093b4f94b3e1189b178947a95fb725  medium/regressor.pt   250144651 bytes   (REQUIRED: arm M)
+745e0e5d97e4256d8a24cb61c2eecbd1128da6c83938c196b7589ea6f62e7421  large/regressor.pt    862909259 bytes   (not used here)
+44b43ed7b8e0f987dc5e90fb6cb4b901eccf0b14dc9f17a9033951603851d37d  LICENSE               2693 bytes        (OpenMDW-1.1)
+# small/regressor.pt (optional fine-tune) was never downloaded on the build machine: setup_env.sh WITH_SMALL=1 fetches it at the same commit and
+# checks it against the sha256 that the Hub reports for the LFS object (X-Linked-Etag); the value is then appended here by hand.
